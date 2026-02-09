@@ -1,0 +1,78 @@
+2026-02-08 15:21:08,875 | INFO | Scheduler started
+2026-02-08 15:21:08,884 | ERROR | Scheduler error: 'Subscriber' object has no attribute 'preferred_time'
+Traceback (most recent call last):
+  File "C:\Users\venka\Documents\ML Projects\AI_NewsDigest\jobs\scheduler.py", line 48, in run_scheduler
+    if is_send_time(user.preferred_time, user.time_zone):
+                    ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Subscriber' object has no attribute 'preferred_time'. Did you mean: 'preffered_time'?
+2026-02-08 15:22:08,896 | ERROR | Scheduler error: 'Subscriber' object has no attribute 'preferred_time'
+Traceback (most recent call last):
+  File "C:\Users\venka\Documents\ML Projects\AI_NewsDigest\jobs\scheduler.py", line 48, in run_scheduler
+    if is_send_time(user.preferred_time, user.time_zone):
+                    ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Subscriber' object has no attribute 'preferred_time'. Did you mean: 'preffered_time'?
+2026-02-08 15:23:08,906 | ERROR | Scheduler error: 'Subscriber' object has no attribute 'preferred_time'
+Traceback (most recent call last):
+  File "C:\Users\venka\Documents\ML Projects\AI_NewsDigest\jobs\scheduler.py", line 48, in run_scheduler
+    if is_send_time(user.preffered_time, user.time_zone):
+                    ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Subscriber' object has no attribute 'preferred_time'. Did you mean: 'preffered_time'?
+2026-02-08 15:24:08,916 | ERROR | Scheduler error: 'Subscriber' object has no attribute 'preferred_time'
+Traceback (most recent call last):
+  File "C:\Users\venka\Documents\ML Projects\AI_NewsDigest\jobs\scheduler.py", line 48, in run_scheduler
+    if is_send_time(user.preffered_time, user.time_zone):
+                    ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Subscriber' object has no attribute 'preferred_time'. Did you mean: 'preffered_time'?
+2026-02-08 15:24:14,126 | INFO | Scheduler started
+2026-02-08 15:57:14,555 | INFO | Scheduler started
+2026-02-08 16:00:14,612 | INFO | Triggering digest pipeline at 16:00 (Asia/Kolkata)
+2026-02-08 16:00:14,613 | INFO | Starting daily news pipeline
+2026-02-08 16:00:14,615 | INFO | Found 1 active subscribers
+2026-02-08 16:00:14,615 | INFO | Processing user: venkatamanojkammara@gmail.com
+2026-02-08 16:00:14,617 | WARNING | No articles found for user venkatamanojkammara@gmail.com
+2026-02-08 16:00:14,617 | INFO | Daily news pipeline finished
+2026-02-08 16:22:07,326 | INFO | Scheduler started
+2026-02-08 16:23:18,184 | INFO | Scheduler started
+2026-02-08 16:30:18,251 | INFO | Triggering digest pipeline at 16:30 (Asia/Kolkata)
+2026-02-08 16:30:18,253 | INFO | Starting daily news pipeline
+2026-02-08 16:30:18,254 | INFO | Found 1 active subscribers
+2026-02-08 16:30:18,255 | INFO | Processing user: venkatamanojkammara@gmail.com
+2026-02-08 16:30:22,155 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:22,498 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:22,828 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:23,191 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:23,543 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:23,941 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:24,278 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:24,616 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:24,955 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:25,309 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:25,686 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:26,044 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:26,419 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:26,763 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:27,166 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:27,391 | ERROR | Failed to extract article from https://www.hindustantimes.com/business/setback-for-maruti-suzuki-as-india-drops-small-car-concessions-in-cafe-iii-norms-101770375324701.html: Article `download()` failed with 403 Client Error: Forbidden for url: https://www.hindustantimes.com/business/setback-for-maruti-suzuki-as-india-drops-small-car-concessions-in-cafe-iii-norms-101770375324701.html on URL https://www.hindustantimes.com/business/setback-for-maruti-suzuki-as-india-drops-small-car-concessions-in-cafe-iii-norms-101770375324701.html
+2026-02-08 16:30:27,726 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:28,071 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:28,405 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:28,761 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:29,089 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:29,430 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:29,759 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:30,103 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:30,471 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:30,809 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:31,146 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:31,481 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:31,802 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:32,144 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:32,479 | ERROR | Failed to summarize article: cannot access local variable 'text' where it is not associated with a value
+2026-02-08 16:30:32,706 | ERROR | Failed to extract article from https://www.hindustantimes.com/india-news/hindus-abandoned-low-skill-jobs-rss-chief-mohan-bhagwat-on-how-infiltrators-secured-work-101770547140530.html: Article `download()` failed with 403 Client Error: Forbidden for url: https://www.hindustantimes.com/india-news/hindus-abandoned-low-skill-jobs-rss-chief-mohan-bhagwat-on-how-infiltrators-secured-work-101770547140530.html on URL https://www.hindustantimes.com/india-news/hindus-abandoned-low-skill-jobs-rss-chief-mohan-bhagwat-on-how-infiltrators-secured-work-101770547140530.html
+2026-02-08 16:30:32,935 | ERROR | Failed to extract article from https://www.hindustantimes.com/india-news/antinaxal-strategy-yielding-results-menace-will-be-eradicated-by-march-31-says-shah-101770546912727.html: Article `download()` failed with 403 Client Error: Forbidden for url: https://www.hindustantimes.com/india-news/antinaxal-strategy-yielding-results-menace-will-be-eradicated-by-march-31-says-shah-101770546912727.html on URL https://www.hindustantimes.com/india-news/antinaxal-strategy-yielding-results-menace-will-be-eradicated-by-march-31-says-shah-101770546912727.html
+2026-02-08 16:30:33,162 | ERROR | Failed to extract article from https://www.hindustantimes.com/india-news/two-drunk-women-ram-bike-into-cab-assault-driver-with-helmet-in-bengaluru-video-surfaces-101770544049431.html: Article `download()` failed with 403 Client Error: Forbidden for url: https://www.hindustantimes.com/india-news/two-drunk-women-ram-bike-into-cab-assault-driver-with-helmet-in-bengaluru-video-surfaces-101770544049431.html on URL https://www.hindustantimes.com/india-news/two-drunk-women-ram-bike-into-cab-assault-driver-with-helmet-in-bengaluru-video-surfaces-101770544049431.html
+2026-02-08 16:30:33,411 | ERROR | Failed to extract article from https://www.hindustantimes.com/india-news/age-15-affiliation-neo-nazi-drew-swastika-with-blood-what-we-know-so-far-on-boy-who-stabbed-4-indians-in-russia-101770544271982.html: Article `download()` failed with 403 Client Error: Forbidden for url: https://www.hindustantimes.com/india-news/age-15-affiliation-neo-nazi-drew-swastika-with-blood-what-we-know-so-far-on-boy-who-stabbed-4-indians-in-russia-101770544271982.html on URL https://www.hindustantimes.com/india-news/age-15-affiliation-neo-nazi-drew-swastika-with-blood-what-we-know-so-far-on-boy-who-stabbed-4-indians-in-russia-101770544271982.html
+2026-02-08 16:30:33,638 | ERROR | Failed to extract article from https://www.hindustantimes.com/india-news/if-they-decide-to-fight-mohan-bhagwats-hindus-will-help-warning-for-bangladesh-101770541878375.html: Article `download()` failed with 403 Client Error: Forbidden for url: https://www.hindustantimes.com/india-news/if-they-decide-to-fight-mohan-bhagwats-hindus-will-help-warning-for-bangladesh-101770541878375.html on URL https://www.hindustantimes.com/india-news/if-they-decide-to-fight-mohan-bhagwats-hindus-will-help-warning-for-bangladesh-101770541878375.html
+2026-02-08 16:30:39,579 | INFO | Email sent sucessfully to venkatamanojkammara@gmail.com.
+2026-02-08 16:30:39,618 | INFO | Email sent successfully to venkatamanojkammara@gmail.com
+2026-02-08 16:30:39,624 | INFO | Daily news pipeline finished

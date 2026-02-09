@@ -1,0 +1,13 @@
+dotenv
+sqlalchemy
+newspaper3k
+regex
+feedparser
+pytz
+langchain
+langchain-google-genai
+streamlit
+lxml
+html5llib
+beautifulsoup4
+lxml_html_clean
