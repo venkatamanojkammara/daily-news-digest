@@ -2,21 +2,14 @@
 backend/db/connection.py
 ------------------------
 
-Database connection module and session management utilities.
+Database connection and session management.
 
-Responsibilities:
-- Create SQLAlchemy engine using DATABASE_URL
-- Create SessionLocal factory
-- Provide safe session context manager
-- Initialize database tables (init_db)
-
-IMPORTANT:
-- init_db() MUST import models to register tables
+Designed to work correctly with:
+- Streamlit Cloud
+- Supabase (PostgreSQL + PgBouncer)
+- Local SQLite (development)
 """
 
-# -------------------------------------------------------------------------
-# Imports
-# -------------------------------------------------------------------------
 from __future__ import annotations
 
 from contextlib import contextmanager
@@ -25,6 +18,7 @@ from typing import Generator
 from sqlalchemy import create_engine
 from sqlalchemy.engine import Engine
 from sqlalchemy.orm import sessionmaker, Session
+from sqlalchemy.pool import NullPool
 
 from backend.config import DATABASE_URL
 
@@ -36,20 +30,28 @@ def _create_engine(database_url: str) -> Engine:
     """
     Create SQLAlchemy engine with safe defaults.
 
-    Notes:
-    - SQLite requires check_same_thread=False for multithreaded apps
-      (Streamlit, background scheduler).
+    IMPORTANT:
+    - SQLite: allow multithreading
+    - Supabase/Postgres on Streamlit Cloud: MUST use NullPool
     """
     connect_args = {}
+
     if database_url.startswith("sqlite"):
         connect_args = {"check_same_thread": False}
 
+        return create_engine(
+            database_url,
+            echo=False,
+            future=True,
+            connect_args=connect_args,
+        )
+
+    # PostgreSQL / Supabase
     return create_engine(
         database_url,
         echo=False,
         future=True,
-        connect_args=connect_args,
-        pool_pre_ping=True,
+        poolclass=NullPool,   # 🚨 REQUIRED
     )
 
 
@@ -69,13 +71,7 @@ SessionLocal = sessionmaker(
 @contextmanager
 def get_session() -> Generator[Session, None, None]:
     """
-    Provide a transactional scope around a series of operations.
-
-    Usage:
-        from backend.db.connection import get_session
-
-        with get_session() as db:
-            db.add(...)
+    Provide a transactional database session.
     """
     db: Session = SessionLocal()
     try:
@@ -93,15 +89,9 @@ def get_session() -> Generator[Session, None, None]:
 # -------------------------------------------------------------------------
 def init_db() -> None:
     """
-    Initialize database tables.
-
-    CRITICAL:
-    We must import the models module so that SQLAlchemy
-    registers all ORM tables before calling create_all().
+    Create tables if they do not exist.
     """
-    from backend.db import models  # REQUIRED side-effect import
+    from backend.db import models  # required side-effect import
 
-    # Debug / verification log (safe to keep for now)
     print("Tables registered:", models.Base.metadata.tables.keys())
-
     models.Base.metadata.create_all(bind=engine)
