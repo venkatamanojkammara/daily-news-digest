@@ -35,23 +35,15 @@ def _create_engine(database_url: str) -> Engine:
     - Supabase/Postgres on Streamlit Cloud: MUST use NullPool
     """
     connect_args = {}
-
     if database_url.startswith("sqlite"):
         connect_args = {"check_same_thread": False}
 
-        return create_engine(
-                DATABASE_URL,
-                echo=False,
-                future=True,
-                poolclass=NullPool
-        )
-
-    # PostgreSQL / Supabase
     return create_engine(
-            DATABASE_URL,
-            echo=False,
-            future=True,
-            poolclass=NullPool 
+        database_url,
+        echo=False,
+        future=True,
+        connect_args=connect_args,
+        pool_pre_ping=True,
     )
 
 
