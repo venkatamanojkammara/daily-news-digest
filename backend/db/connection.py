@@ -44,6 +44,8 @@ def _create_engine(database_url: str) -> Engine:
             echo=False,
             future=True,
             connect_args=connect_args,
+            pool_pre_ping=True,
+            poolclass=NullPool
         )
 
     # PostgreSQL / Supabase
