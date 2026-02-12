@@ -53,7 +53,9 @@ def _create_engine(database_url: str) -> Engine:
         database_url,
         echo=False,
         future=True,
-        poolclass=NullPool,   # 🚨 REQUIRED
+        connect_args=connect_args,
+        pool_pre_ping=True,
+        poolclass=NullPool
     )
 
 
