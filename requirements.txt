@@ -11,5 +11,4 @@ lxml
 html5lib
 beautifulsoup4
 lxml_html_clean
-psycopg[binary]
-
+psycopg2
